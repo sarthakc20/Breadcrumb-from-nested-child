@@ -1,0 +1,92 @@
+{
+  "collections": [
+    {
+      "id": "c1",
+      "title": "Men",
+      "children": [
+        {
+          "id": "c1-1",
+          "title": "Clothing",
+          "children": [
+            {
+              "id": "c1-1-1",
+              "title": "T-Shirts",
+              "product": {
+                "mainProductId": "p1",
+                "title": "Oversized Cotton Tee",
+                "price": "₹999",
+                "variants": [
+                  { "variantId": "v1", "title": "M / Black" },
+                  { "variantId": "v2", "title": "L / White" }
+                ]
+              }
+            },
+            {
+              "id": "c1-1-2",
+              "title": "Hoodies",
+              "product": {
+                "mainProductId": "p2",
+                "title": "Graphic Hoodie",
+                "price": "₹1499",
+                "variants": [
+                  { "variantId": "v3", "title": "S / Blue" },
+                  { "variantId": "v4", "title": "M / Black" }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "title": "Unisex",
+      "children": [
+        {
+          "id": "c2-1",
+          "title": "Featured",
+          "children": [
+            {
+              "id": "c2-1-1",
+              "title": "Best Sellers",
+              "product": {
+                "mainProductId": "p1",
+                "title": "Oversized Cotton Tee",
+                "price": "₹999",
+                "variants": [
+                  { "variantId": "v1", "title": "M / Black" },
+                  { "variantId": "v2", "title": "L / White" }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "title": "Women",
+      "children": [
+        {
+          "id": "c3-1",
+          "title": "Accessories",
+          "children": [
+            {
+              "id": "c3-1-1",
+              "title": "Bags",
+              "product": {
+                "mainProductId": "p3",
+                "title": "Canvas Tote Bag",
+                "price": "₹799",
+                "variants": [
+                  { "variantId": "v5", "title": "Beige" },
+                  { "variantId": "v6", "title": "Olive Green" }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
