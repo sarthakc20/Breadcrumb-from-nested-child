@@ -296,3 +296,87 @@ trails = [
 | T-Shirts | `["Men", "Clothing"]` | `["Men", "Clothing", "T-Shirts"]` |
 | Featured | `["Unisex"]`          | `["Unisex", "Featured"]`          |
 
+---
+
+Let’s analyze the **time and space complexity**, which supports **multiple breadcrumb trails** for products that may exist in **multiple collections**.
+
+### ✅ **What the code does**:
+
+* Traverses a tree-like structure (`data.collections[]` → `children[]`) to find **all paths** where the product with a specific `mainProductId` appears.
+* Uses a **recursive depth-first search** (`buildTrial`) to accumulate breadcrumb paths.
+
+---
+
+### 📈 **Time Complexity**
+
+Let:
+
+* `n` = total number of nodes (collections + subcollections + product nodes).
+* `d` = depth of the tree (max levels).
+* `m` = number of matching products with `selectedProductId`.
+
+Then:
+
+#### ➤ Worst-case time:
+
+```txt
+O(n)
+```
+
+Because:
+
+* Every node is visited **once**.
+* Each recursive call does **O(1)** work except for:
+
+  * `newPath = [...path, node.title]` → **O(d)** copy per call.
+  * `trails.push([...])` → O(d) copy only for matching paths.
+
+So if you have many matching nodes (like shared product across collections), this could become:
+
+```txt
+Time = O(n * d)
+```
+
+But since `d` is typically small (3-5 levels), we often treat it as **constant**.
+
+---
+
+### 🧠 Final Time Complexity:
+
+| Case                  | Complexity    |
+| --------------------- | ------------- |
+| Typical case          | **O(n)**      |
+| With multiple matches | **O(n \* d)** |
+
+---
+
+### 📦 **Space Complexity**
+
+* The `path` array grows to depth `d`, and copies are made for `newPath`.
+* `trails[]` stores up to `m` arrays of length up to `d + 1`.
+
+So:
+
+```txt
+Space = O(d) for recursion + O(m * d) for trails
+```
+
+---
+
+### 🧠 Final Space Complexity:
+
+| Component     | Complexity    |
+| ------------- | ------------- |
+| Call stack    | O(d)          |
+| Trail storage | O(m \* d)     |
+| Total         | **O(m \* d)** |
+
+---
+
+### ✅ Summary
+
+| Metric           | Value            |
+| ---------------- | ---------------- |
+| Time Complexity  | O(n) to O(n × d) |
+| Space Complexity | O(m × d)         |
+
